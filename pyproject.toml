@@ -59,7 +59,7 @@ Source = "https://github.com/kaboompixel/traccar-api-python-client"
 Tracker = "https://github.com/kaboompixel/traccar-api-python-client/issues"
 
 [tool.flit.module]
-name = "python_package"
+name = "traccar_api_python_client"
 
 [tool.bandit]
 exclude_dirs = ["build","dist","tests","scripts"]
