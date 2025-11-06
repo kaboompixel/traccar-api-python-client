@@ -21,5 +21,13 @@ def good_night() -> str:
 
 
 def hello_goodbye():
+    """
+    Executes a sequence of methods to print a greeting message followed by
+    a farewell message.
+
+    Functions:
+        hello_world: Prints a greeting message.
+        good_night: Prints a farewell message.
+    """
     hello_world(1)
     good_night()
