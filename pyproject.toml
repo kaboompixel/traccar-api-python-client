@@ -34,9 +34,9 @@ build = [
     "openapi-python-client==0.27.1",
 ]
 test = [
-    "bandit[toml]==1.7.5",
+    "bandit[toml]==1.8.6",
     "black==25.9.0",
-    "check-manifest==0.49",
+    "check-manifest==0.51",
     "flake8-bugbear==23.5.9",
     "flake8-docstrings",
     "flake8-formatter_junit_xml",
@@ -50,7 +50,7 @@ test = [
     "pytest-runner",
     "pytest==7.3.1",
     "pytest-github-actions-annotate-failures",
-    "shellcheck-py==0.9.0.2"
+    "shellcheck-py==0.11.0.1"
 ]
 
 [project.urls]
