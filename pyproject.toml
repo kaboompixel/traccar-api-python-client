@@ -15,25 +15,25 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "Topic :: Software Development :: Libraries :: Python Modules"
 ]
-dependencies = []
-requires-python = ">=3.8.1"
+dependencies = [
+    "httpx>=0.23.0,<0.29.0",
+    "attrs>=22.2.0",
+    "python-dateutil>=2.8.1"
+]
+requires-python = ">=3.10"
 dynamic = ["version"]
 
 [project.optional-dependencies]
-spark = [
-    "pyspark>=3.0.0"
-]
-build = [
-    "openapi-python-client==0.27.1",
-]
-test = [
+
+# requirements for testing / buildling (these should not be distributed)
+development = [
     "bandit[toml]==1.8.6",
     "black==25.9.0",
     "check-manifest==0.51",
@@ -42,9 +42,11 @@ test = [
     "flake8-formatter_junit_xml",
     "flake8",
     "flake8-pyproject",
+    "openapi-python-client==0.27.1",
     "pre-commit==4.3.0",
     "pylint==3.3.9",
     "pylint_junit",
+    "pytest-asyncio>=1.2.0",
     "pytest-cov==7.0.0",
     "pytest-mock<3.15.2",
     "pytest-runner",
