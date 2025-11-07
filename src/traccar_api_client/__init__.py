@@ -1,4 +1,4 @@
-"""A client library for accessing Traccar"""
+"""A Python API client for the Traccar GPS tracking system"""
 
 __version__ = "0.0.1"
 

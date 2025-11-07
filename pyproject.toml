@@ -7,6 +7,7 @@ name =  "traccar-api-python-client"
 authors = [
     {name = "Kaboom Pixel", email = "undisclosed@no-reply.email"},
 ]
+
 description = "A Python client for the Traccar API"
 readme = "README.md"
 classifiers = [
@@ -71,6 +72,7 @@ all = [
 
 [project.urls]
 Documentation = "https://github.com/kaboompixel/traccar-api-python-client/blob/main/README.md"
+Home = "https://github.com/kaboompixel/traccar-api-python-client"
 Source = "https://github.com/kaboompixel/traccar-api-python-client"
 Tracker = "https://github.com/kaboompixel/traccar-api-python-client/issues"
 
