@@ -30,10 +30,15 @@ dependencies = [
 requires-python = ">=3.10"
 dynamic = ["version"]
 
-[project.optional-dependencies]
+[dependency-groups]
 
-# requirements for testing / buildling (these should not be distributed)
-development = [
+# requirements for buildling (these should not be distributed)
+building = [
+    "openapi-python-client==0.27.1",
+]
+
+# requirements for linting (not distributed)
+linting = [
     "bandit[toml]==1.8.6",
     "black==25.9.0",
     "check-manifest==0.51",
@@ -42,17 +47,26 @@ development = [
     "flake8-formatter_junit_xml",
     "flake8",
     "flake8-pyproject",
-    "openapi-python-client==0.27.1",
     "pre-commit==4.3.0",
     "pylint==3.3.9",
     "pylint_junit",
+    "pytest-github-actions-annotate-failures",
+    "shellcheck-py==0.11.0.1"
+]
+
+# requirements for testing (also not distributed)
+testing = [
     "pytest-asyncio>=1.2.0",
     "pytest-cov==7.0.0",
     "pytest-mock<3.15.2",
     "pytest-runner",
     "pytest==8.4.2",
-    "pytest-github-actions-annotate-failures",
-    "shellcheck-py==0.11.0.1"
+]
+
+all = [
+    {include-group = "building"},
+    {include-group = "linting"},
+    {include-group = "testing"},
 ]
 
 [project.urls]
@@ -137,34 +151,13 @@ markers = [
 ]
 
 [tool.tox]
-legacy_tox_ini = """
-[tox]
-envlist = py, integration, spark, all
+requires = ["tox>=4.22"]
+env_list = ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
-[testenv]
-commands =
-    pytest -m "not integration and not spark" {posargs}
-
-[testenv:integration]
-commands =
-    pytest -m "integration" {posargs}
-
-[testenv:spark]
-extras = spark
-setenv =
-       PYSPARK_DRIVER_PYTHON = {envpython}
-       PYSPARK_PYTHON = {envpython}
-commands =
-    pytest -m "spark" {posargs}
-
-[testenv:all]
-extras = all
-setenv =
-       PYSPARK_DRIVER_PYTHON = {envpython}
-       PYSPARK_PYTHON = {envpython}
-commands =
-    pytest {posargs}
-"""
+[tool.tox.env_run_base]
+description = "Run test under Python {base_python}"
+commands = [["pytest", "--no-cov"]]
+dependency_groups = ["testing"]
 
 [tool.pylint]
 extension-pkg-whitelist= [
