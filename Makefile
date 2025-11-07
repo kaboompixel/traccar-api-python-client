@@ -18,6 +18,7 @@ help:
 	@echo "\t make format-check	\t run code formatting check"
 	@echo "\t make generate \t\t\t generate the client (from openapi)"
 	@echo "\t make lint \t\t\t lint python source files"
+	@echo "\t make publish \t\t\t publish the package (PyPI)"
 	@echo "\t make test \t\t\t run tests"
 	@echo "\t make tox \t\t\t run tests against various python versions"
 	@echo "\t make venv \t\t\t setup python virtual environment"
@@ -69,6 +70,10 @@ generate:
 .PHONY: lint
 lint: format-check
 	@${PYTHON} -Im pylint src/ tests/
+
+.PHONY: publish
+publish:
+	flit publish
 
 .PHONY: test
 test:
