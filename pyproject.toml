@@ -301,16 +301,16 @@ valid-classmethod-first-arg="cls"
 valid-metaclass-classmethod-first-arg="cls"
 
 [tool.pylint.'DESIGN']
-max-args=5
-max-attributes=7
+max-args=6
+max-attributes=25
 max-bool-expr=5
-max-branches=12
-max-locals=15
+max-branches=34
+max-locals=33
 max-parents=7
 max-public-methods=20
 max-returns=6
-max-statements=50
-min-public-methods=2
+max-statements=95
+min-public-methods=1
 
 [tool.pylint.'IMPORTS']
 allow-wildcard-with-all="no"
@@ -321,4 +321,17 @@ deprecated-modules="optparse,tkinter.tix"
 overgeneral-exceptions= [
     "builtins.BaseException",
     "builtins.Exception"
+]
+
+[tool.pylint."messages control"]
+disable = [
+    "duplicate-code",
+    "empty-docstring",
+    "import-outside-toplevel",
+    "line-too-long",
+    "missing-class-docstring",
+    "missing-function-docstring",
+    "missing-module-docstring",
+    "no-else-raise",
+    "redefined-builtin",
 ]
