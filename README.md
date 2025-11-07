@@ -1,6 +1,8 @@
 # `traccar-api-python-client`
 
 [![Python CI](https://github.com/kaboompixel/traccar-api-python-client/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/kaboompixel/traccar-api-python-client/actions/workflows/CI.yml)
+![PyPI - Version](https://img.shields.io/pypi/v/traccar-api-python-client)
+
 
 `traccar-api-python-client` is an API client for the [Traccar](https://www.traccar.org/) GPS Tracking system, written in Python. 
 The client is generated from the Traccar OpenAPI specification using [openapi-python-client](https://github.com/openapi-generators/openapi-python-client) and packaged for convenience.
