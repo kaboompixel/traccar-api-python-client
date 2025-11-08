@@ -73,7 +73,7 @@ lint: format-check
 
 .PHONY: publish
 publish:
-	flit publish
+	${PYTHON} -Im flit publish
 
 .PHONY: test
 test:
