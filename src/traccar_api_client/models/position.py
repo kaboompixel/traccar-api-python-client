@@ -161,21 +161,21 @@ class Position:
 
         _device_time = d.pop("deviceTime", UNSET)
         device_time: datetime.datetime | Unset
-        if isinstance(_device_time, Unset):
+        if isinstance(_device_time, Unset) or _device_time is None:
             device_time = UNSET
         else:
             device_time = isoparse(_device_time)
 
         _fix_time = d.pop("fixTime", UNSET)
         fix_time: datetime.datetime | Unset
-        if isinstance(_fix_time, Unset):
+        if isinstance(_fix_time, Unset) or _fix_time is None:
             fix_time = UNSET
         else:
             fix_time = isoparse(_fix_time)
 
         _server_time = d.pop("serverTime", UNSET)
         server_time: datetime.datetime | Unset
-        if isinstance(_server_time, Unset):
+        if isinstance(_server_time, Unset) or _server_time is None:
             server_time = UNSET
         else:
             server_time = isoparse(_server_time)
@@ -198,7 +198,7 @@ class Position:
 
         _network = d.pop("network", UNSET)
         network: PositionNetwork | Unset
-        if isinstance(_network, Unset):
+        if isinstance(_network, Unset) or _network is None:
             network = UNSET
         else:
             network = PositionNetwork.from_dict(_network)
@@ -207,7 +207,7 @@ class Position:
 
         _attributes = d.pop("attributes", UNSET)
         attributes: PositionAttributes | Unset
-        if isinstance(_attributes, Unset):
+        if isinstance(_attributes, Unset) or _attributes is None:
             attributes = UNSET
         else:
             attributes = PositionAttributes.from_dict(_attributes)

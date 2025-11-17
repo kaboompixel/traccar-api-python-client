@@ -272,7 +272,7 @@ class User:
 
         _attributes = d.pop("attributes", UNSET)
         attributes: UserAttributes | Unset
-        if isinstance(_attributes, Unset):
+        if isinstance(_attributes, Unset) or _attributes is None:
             attributes = UNSET
         else:
             attributes = UserAttributes.from_dict(_attributes)

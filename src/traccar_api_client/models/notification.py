@@ -112,7 +112,7 @@ class Notification:
 
         _attributes = d.pop("attributes", UNSET)
         attributes: NotificationAttributes | Unset
-        if isinstance(_attributes, Unset):
+        if isinstance(_attributes, Unset) or _attributes is None:
             attributes = UNSET
         else:
             attributes = NotificationAttributes.from_dict(_attributes)

@@ -41,7 +41,7 @@ class PostSessionTokenBody:
         d = dict(src_dict)
         _expiration = d.pop("expiration", UNSET)
         expiration: datetime.datetime | Unset
-        if isinstance(_expiration, Unset):
+        if isinstance(_expiration, Unset) or _expiration is None:
             expiration = UNSET
         else:
             expiration = isoparse(_expiration)

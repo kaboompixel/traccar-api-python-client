@@ -181,7 +181,7 @@ class Server:
 
         _attributes = d.pop("attributes", UNSET)
         attributes: ServerAttributes | Unset
-        if isinstance(_attributes, Unset):
+        if isinstance(_attributes, Unset) or _attributes is None:
             attributes = UNSET
         else:
             attributes = ServerAttributes.from_dict(_attributes)

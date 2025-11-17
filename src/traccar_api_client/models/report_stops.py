@@ -103,7 +103,7 @@ class ReportStops:
 
         _start_time = d.pop("startTime", UNSET)
         start_time: datetime.datetime | Unset
-        if isinstance(_start_time, Unset):
+        if isinstance(_start_time, Unset) or _start_time is None:
             start_time = UNSET
         else:
             start_time = isoparse(_start_time)
@@ -116,7 +116,7 @@ class ReportStops:
 
         _end_time = d.pop("endTime", UNSET)
         end_time: datetime.datetime | Unset
-        if isinstance(_end_time, Unset):
+        if isinstance(_end_time, Unset) or _end_time is None:
             end_time = UNSET
         else:
             end_time = isoparse(_end_time)
