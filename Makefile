@@ -64,6 +64,7 @@ format-check:
 generate:
 	openapi-python-client generate --path ${LOCAL_SPEC_FILE} \
 		--config ./config.yml \
+		--custom-template-path ./templates \
 		--output-path ./src \
 		--overwrite
 
