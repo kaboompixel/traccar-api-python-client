@@ -77,7 +77,7 @@ class Command:
 
         _attributes = d.pop("attributes", UNSET)
         attributes: CommandAttributes | Unset
-        if isinstance(_attributes, Unset):
+        if isinstance(_attributes, Unset) or _attributes is None:
             attributes = UNSET
         else:
             attributes = CommandAttributes.from_dict(_attributes)

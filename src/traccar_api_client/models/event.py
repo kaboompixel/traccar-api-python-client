@@ -95,7 +95,7 @@ class Event:
 
         _event_time = d.pop("eventTime", UNSET)
         event_time: datetime.datetime | Unset
-        if isinstance(_event_time, Unset):
+        if isinstance(_event_time, Unset) or _event_time is None:
             event_time = UNSET
         else:
             event_time = isoparse(_event_time)
@@ -110,7 +110,7 @@ class Event:
 
         _attributes = d.pop("attributes", UNSET)
         attributes: EventAttributes | Unset
-        if isinstance(_attributes, Unset):
+        if isinstance(_attributes, Unset) or _attributes is None:
             attributes = UNSET
         else:
             attributes = EventAttributes.from_dict(_attributes)

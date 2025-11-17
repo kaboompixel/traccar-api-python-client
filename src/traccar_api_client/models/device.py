@@ -230,7 +230,7 @@ class Device:
 
         _attributes = d.pop("attributes", UNSET)
         attributes: DeviceAttributes | Unset
-        if isinstance(_attributes, Unset):
+        if isinstance(_attributes, Unset) or _attributes is None:
             attributes = UNSET
         else:
             attributes = DeviceAttributes.from_dict(_attributes)

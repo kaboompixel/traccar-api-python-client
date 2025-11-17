@@ -69,7 +69,7 @@ class Driver:
 
         _attributes = d.pop("attributes", UNSET)
         attributes: DriverAttributes | Unset
-        if isinstance(_attributes, Unset):
+        if isinstance(_attributes, Unset) or _attributes is None:
             attributes = UNSET
         else:
             attributes = DriverAttributes.from_dict(_attributes)

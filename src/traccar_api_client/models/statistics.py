@@ -71,7 +71,7 @@ class Statistics:
         d = dict(src_dict)
         _capture_time = d.pop("captureTime", UNSET)
         capture_time: datetime.datetime | Unset
-        if isinstance(_capture_time, Unset):
+        if isinstance(_capture_time, Unset) or _capture_time is None:
             capture_time = UNSET
         else:
             capture_time = isoparse(_capture_time)

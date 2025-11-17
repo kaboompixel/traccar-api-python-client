@@ -85,7 +85,7 @@ class Geofence:
 
         _attributes = d.pop("attributes", UNSET)
         attributes: GeofenceAttributes | Unset
-        if isinstance(_attributes, Unset):
+        if isinstance(_attributes, Unset) or _attributes is None:
             attributes = UNSET
         else:
             attributes = GeofenceAttributes.from_dict(_attributes)

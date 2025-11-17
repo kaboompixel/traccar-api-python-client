@@ -69,7 +69,7 @@ class Group:
 
         _attributes = d.pop("attributes", UNSET)
         attributes: GroupAttributes | Unset
-        if isinstance(_attributes, Unset):
+        if isinstance(_attributes, Unset) or _attributes is None:
             attributes = UNSET
         else:
             attributes = GroupAttributes.from_dict(_attributes)
